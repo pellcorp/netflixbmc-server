@@ -10,10 +10,8 @@ class Player {
 			parse_str($query, $query_array);
 			if ($query_array['mode'] == 'playVideo') {
 				$movieId = $query_array['url'];
-				$netflixUrl = "https://netflix.com/WiPlayer?movieid=$movieId";
-				exec("./browser.sh $netflixUrl", $output, $return_val);
-
-				return array('return'=>$return_val);
+				shell_exec("./browser.sh $movieId > /dev/null 2>&1 &");
+				return array('return'=>'0');
 			}
 		}
 

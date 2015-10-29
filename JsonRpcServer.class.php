@@ -89,7 +89,8 @@ class JsonRpcServer {
 					'error' => array('code'=>(int) $code, 'message'=>$msg));
 		}
 		
-		echo json_encode ($response);
+		$response = json_encode ($response);
+		echo $response;
 	}
 }
 ?>
