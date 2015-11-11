@@ -49,5 +49,5 @@ class JSONRequestHandler (BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(e)
 
-server = HTTPServer(("localhost", PORT), JSONRequestHandler)
+server = HTTPServer(("0.0.0.0", PORT), JSONRequestHandler)
 server.serve_forever()
